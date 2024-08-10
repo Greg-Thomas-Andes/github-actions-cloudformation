@@ -1,16 +1,8 @@
-RESOURCES:
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'VPC Stack for GTA'
+
+Resources:
   VPCGTA: 
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 172.31.0.0/16
-      # EnableDnsHostnames: Boolean
-      # EnableDnsSupport: Boolean
-      # InstanceTenancy: String
-      # Ipv4IpamPoolId: String
-      # Ipv4NetmaskLength: Integer
-      # Tags: 
-      #   - Tag
-
-# on:
-#   push:
-#   workflow_dispatch:

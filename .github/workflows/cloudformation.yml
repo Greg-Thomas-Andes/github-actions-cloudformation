@@ -17,5 +17,11 @@ jobs:
       - name: Install CloudFormation modules Powershell
         shell: pwsh
         run: Install-Module -Name AWS.Tools.CloudFormation
+      - name: Verify AWS CLI Configuration
+        run: aws sts get-caller-identity
+      - name: Display CloudFormation Template
+        run: cat cloudformation-vpc.yml
+      - name: Display PowerShell Script
+        run: cat deploy.ps1
       - name: Run PS Deploy
         run: pwsh deploy.ps1
