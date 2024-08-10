@@ -14,9 +14,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-1
-      - name: Install CloudFormation modules Powershell
+      - name: Install and Import AWS.Tools.CloudFormation
         shell: pwsh
-        run: Install-Module -Name AWS.Tools.CloudFormation
+        run: |
+            Install-Module -Name AWS.Tools.CloudFormation -Force -AllowClobber -Scope CurrentUser
+            Import-Module AWS.Tools.CloudFormation
       - name: Verify AWS CLI Configuration
         run: aws sts get-caller-identity
       - name: Display CloudFormation Template
