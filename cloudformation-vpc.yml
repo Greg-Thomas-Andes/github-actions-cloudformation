@@ -2,7 +2,7 @@ RESOURCES:
   VPCGTA: 
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: 10.60.0.0/16
+      CidrBlock: 172.31.0.0/16
       # EnableDnsHostnames: Boolean
       # EnableDnsSupport: Boolean
       # InstanceTenancy: String
